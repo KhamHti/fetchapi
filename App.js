@@ -21,7 +21,6 @@ const App = () => {
     fetch(moviesURL)
       .then((res) => res.json())
       .then((json) => {
-        console.log(json);
         setData(json.movies);
         setTitle(json.title);
         setDescription(json.description);
