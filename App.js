@@ -1,3 +1,4 @@
+import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
@@ -34,7 +35,7 @@ const App = () => {
       {isLoading ? (
         <ActivityIndicator />
       ) : (
-        <View style={{ paddingVertical: 15 }}>
+        <SafeAreaView style={styles.container}>
           <Text style={styles.title}>{title}</Text>
           <View style={{ marginBottom: 15, borderBottomWidth: 1 }}></View>
           <FlatList
@@ -49,7 +50,8 @@ const App = () => {
             )}
           />
           <Text style={styles.description}>{description}</Text>
-        </View>
+          {/* <StatusBar backgroundColor="grey"  /> */}
+        </SafeAreaView>
       )}
     </SafeAreaView>
   );
